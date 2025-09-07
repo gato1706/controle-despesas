@@ -14,14 +14,6 @@ O sistema tem como finalidade auxiliar no **controle financeiro familiar**, perm
 - Emitir alertas de limite.
 - Visualizar gráfico de distribuição dos gastos.
 
----
-
-## 🛠️ Tecnologias
-- **HTML5** → Estrutura da aplicação.  
-- **CSS3** → Estilização e responsividade.  
-- **JavaScript (ES6+)** → Lógica do sistema.  
-- **[Chart.js](https://www.chartjs.org/)** → Geração do gráfico de distribuição.  
-- *(Opcional)* [SweetAlert2](https://sweetalert2.github.io/) → Exibição de alertas.
 
 ---
 
