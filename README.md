@@ -23,7 +23,6 @@ O sistema tem como finalidade auxiliar no **controle financeiro familiar**, perm
 /simulador-orcamento
 │── index.html              # Página principal do projeto
 │── style.css               # Estilos globais
-│── main.js                 # Script principal para integração dos módulos
 │
 ├── /js                     # Pasta para scripts JavaScript organizados
 │   ├── despesas.js         # Funções relacionadas a despesas
@@ -33,10 +32,7 @@ O sistema tem como finalidade auxiliar no **controle financeiro familiar**, perm
 │
 ├── /assets                 # Recursos estáticos
 │   ├── img/                # Ícones e imagens
-│   └── css/                # (opcional) estilos adicionais
-│
-└── /docs                   # Documentação e arquivos extras
-    └── README.md           # Orientações do projeto
+└── 
 ```
 
 ---
