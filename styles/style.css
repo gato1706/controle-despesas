@@ -46,3 +46,7 @@ input {
 .tittle h1 {
   color: #b1e1e9;
 }
+
+.link{
+  text-decoration: none;
+}
