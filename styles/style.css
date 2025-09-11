@@ -49,4 +49,26 @@ input {
 }
 .tittle h1 {
   color: #b1e1e9;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
+  gap: 10px;
+}
+button {
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px #209eb4;
+  font-size: 13px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+label {
+  font-size: 18px;
 }
