@@ -1,3 +1,11 @@
+:root {
+  --cor-principal: #96d7eb;
+  --cor-secundaria: #b1e1e9;
+  --cor-fundo: #686466;
+  --cor-fundo-secundaria: #839cb5;
+  --cor-alternativa: #f2e4f9;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +13,7 @@
 }
 
 body {
-  background-color: #686466;
+  background-color: var(--cor-fundo);
 }
 .container {
   align-items: center;
@@ -48,7 +56,7 @@ input {
   border-bottom: solid 3px #ebd9f5;
 }
 .tittle h1 {
-  color: #b1e1e9;
+  color: var(--cor-secundaria);
   font-weight: bold;
   font-size: 36px;
 }
