@@ -18,6 +18,8 @@ function addDespesa(){
     console.log(despesa)
 }
 
-function exibirDespesa(){
-    // continuar depois
+function exibirDespesa(despesa){
+   let li = document.createElement("li")
+   li.innerHTML = despesa
+   document.querySelector('ul').appendChild(li)
 }
