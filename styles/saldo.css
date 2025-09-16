@@ -1,0 +1,21 @@
+
+.saldo-positivo{
+  background: #d4efdf;
+  color: green;
+}
+
+.saldo-neutro{
+  background: #dad8ac;
+  color: yellow 
+}
+
+.saldo-negativo{
+  background: #e48d8d;
+  color: rgb(255, 0, 0);
+}
+
+
+.resultado-erro{
+  background: #d5b487;
+  color: orange;
+}
