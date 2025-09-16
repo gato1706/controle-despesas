@@ -27,7 +27,7 @@ export function classificarSaldo(saldo){
     //IsNaN - Is Not a Number
     // !== diferente de número
     if(typeof saldo!== 'number' || isNaN(saldo)){
-        throw new Error('O valor do saldo deve ser um número')
+        throw new Error('O valor do saldo deve ser um número !')
     }
     switch(true){
         case saldo > 0:
