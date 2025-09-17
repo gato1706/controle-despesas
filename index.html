@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Controle de Despesas</title>
     <link rel="stylesheet" href="./styles/index.css" />
-    <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/despesas.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,7 +23,7 @@
         <div class="inputs">
           <label for="">Receita Mensal</label>
           <input
-            type="text"
+            type="number"
             placeholder="Adicione sua receita mensal"
             id="receita"
             required
@@ -31,7 +31,7 @@
 
           <label for="">Valor da despesa</label>
           <input
-            type="text"
+            type="number"
             placeholder="Digite o valor da sua despesa"
             id="valorDespesa"
             required
@@ -46,12 +46,9 @@
           />
         </div>
 
-
-
-
         <div class="buttons">
-          <button id="btnAdicionar" class="btn">Adicionar</button>
-          <button id="btnRelatorio" class="btn" >
+          <button id="btnAdicionar" class="btn" type="button" onclick="addDespesa()">Adicionar</button>
+          <button id="btnRelatorio" class="btn" type="button">
             <a href="despesas.html">Exibir despesas</a>
           </button>
         </div>
