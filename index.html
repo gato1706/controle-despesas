@@ -21,7 +21,7 @@
         </div>
 
         <div class="inputs">
-          <label for="">Receita Mensal</label>
+          <label for="receita">Receita Mensal</label>
           <input
             type="number"
             placeholder="Adicione sua receita mensal"
@@ -29,7 +29,7 @@
             required
           />
 
-          <label for="">Valor da despesa</label>
+          <label for="valorDespesa">Valor da despesa</label>
           <input
             type="number"
             placeholder="Digite o valor da sua despesa"
@@ -37,7 +37,7 @@
             required
           />
 
-          <label for="">Categoria de despesas</label>
+          <label for="categoria">Categoria de despesas</label>
           <input
             type="text"
             placeholder="Escolha a categoria da despesa"
@@ -47,11 +47,14 @@
         </div>
 
         <div class="buttons">
-          <button id="btnAdicionar" class="btn" type="button" onclick="addDespesa()">Adicionar</button>
-          <button id="btnRelatorio" class="btn" type="button">
+          <button id="btnAdicionar" class="btn">Adicionar</button>
+          <button id="btnRelatorio" class="btn" >
             <a href="despesas.html">Exibir despesas</a>
           </button>
         </div>
+
+        <ul id="listaDespesas">
+      </ul>
       </form>
     </div>
   </body>
