@@ -1,43 +1,72 @@
-let despesa = []
+let despesas = [];
+
+document.addEventListener("DOMContentLoaded", function () {
+  // 2. Carrega os produtos do Local Storage
+  function carregaProdutosLocalStorage() {
+    despesas = JSON.parse(localStorage.getItem("despesas")) || [];
+  }
+  carregaProdutosLocalStorage();
+});
+
+export function AdicionarDespesa(){
+
+  const form = document.getElementById("formCalc");
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const valor = parseFloat(document.getElementById("valor").value);
+      const categoria = document.getElementById("categoria").value;
 
 
+      const novaDespesa = { valor, categoria, descricao, data};
 
-document.addEventListener('DOMContentLoaded', function() {
-    // 2. Carrega os produtos do Local Storage
-    function carregaProdutosLocalStorage() {
-        despesa = JSON.parse(localStorage.getItem('despesa')) || [];
-        
-    }
-    carregaProdutosLocalStorage()
-})
+      let despesas = getDespesas();
+      despesas.push(novaDespesa);
+      salvarDespesas(despesas);
 
-
-    export function addDespesa(){
-
-    let valor = parseFloat(document.getElementById('valorDespesa').value)
-    let categoria = document.getElementById('categoria').value
-    
-    if (valor <= 0){
-        throw new Error('Valor da despesa deve ser maior que 0')
-    }
-
-    const novaDespesa = {
-        valor,
-        categoria
-    }
-
-    despesa.push(novaDespesa)
-
-    localStorage.setItem("despesa",JSON.stringify(despesa))
-
+      alert("Despesa adicionada!");
+      form.reset();
+    });
+  }
 }
 
- export function mostrarDespesas(){
-      const lista = document.getElementById("listaDespesas");
-      lista.innerHTML = ""; // limpa antes de renderizar de novo
 
-      despesa.forEach((despesa) => {
-        let item = document.createElement("li");
-        item.textContent = `R$ ${despesa.valor} - ${despesa.categoria}`;
-        lista.appendChild(item);
-      })}
+export function removerUltima() {
+  if (despesas.length === 0) {
+    alert("A lista de Despesa está vaiza, não há o que remover.");
+    return;
+  }
+  despesas.pop();
+  salvaProdutosLocalStorage();
+  mostrarDespesas();
+}
+
+export function removerPrimeira() {
+  if (despesas.length === 0) {
+    alert("A lista está vazia, não há o que remover!");
+    return;
+  }
+
+  despesas.shift();
+  salvaProdutosLocalStorage();
+  mostrarDespesas();
+}
+
+export function mostrarDespesas() {
+  const listaDespesas = document.getElementById("#listaDespesas tbody");
+  listaDespesas.innerHTML = ""; // limpa antes de renderizar de novo
+
+  despesas.forEach((despesas) => {
+    const linha = `<tr>
+        <td>${despesas.categoria}</td>
+        <td>${despesas.valorDespesa}</td>
+        <td>${despesas.receita}</td>
+        </tr>
+    `;
+    listaDespesas.innerHTML += linha;
+  });
+
+  calcularTotal();
+}
