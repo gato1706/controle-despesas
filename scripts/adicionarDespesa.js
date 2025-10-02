@@ -1,8 +1,6 @@
 import { getDespesas, salvarDespesas } from "./storage.js";
 
-
-export function adicionarDespesa(){
-
+export function adicionarDespesa() {
   const form = document.getElementById("formCalc");
 
   if (form) {
@@ -10,11 +8,16 @@ export function adicionarDespesa(){
       e.preventDefault();
 
       const valor = parseFloat(document.getElementById("valorDespesa").value);
-      const categoria = document.getElementById("categoria").value;
+      const categoria = document.getElementById("categorias").value;
       const receita = document.getElementById("receita").value;
+      const dataInput = document.getElementById("data").value;
 
+      const [ano, mes, dia] = dataInput.split("-");
+      const dataFormatada = `${dia}/${mes}/${ano}`;
 
-      const novaDespesa = { valor, categoria, receita};
+      console.log(dataFormatada); // "02/10/2025"
+
+      const novaDespesa = { valor, categoria, receita, dataFormatada };
 
       let despesas = getDespesas();
       despesas.push(novaDespesa);
