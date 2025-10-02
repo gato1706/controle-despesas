@@ -4,36 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Despesas</title>
+    <link rel="stylesheet" href="styles/index.css" />
     <script src="scripts/main.js" type="module" defer></script>
   </head>
   <body>
-    <div class="despesas">
-      <div class="tittleDespesas">
-        <h1>Lista de Despesas</h1>
-      </div>
-      <div class="buttons">
-        <button id="btnAdicionar" class="btn" onclick="removerPrimeira()">
-          Remover a primeira despesa
-        </button>
-        <button id="btnAdicionar" class="btn" onclick="removerUltima()">
-          Remover a ultima despesa
-        </button>
-      </div>
+    <div class="container">
+      <div class="despesas">
+        <div class="tittleDespesas">
+          <h1>Lista de Despesas</h1>
+        </div>
+        <div class="buttons">
+          <button id="btnAdicionar" class="btn" onclick="removerPrimeira()">
+            Remover a primeira despesa
+          </button>
+          <button id="btnAdicionar" class="btn" onclick="removerUltima()">
+            Remover a ultima despesa
+          </button>
+        </div>
 
-      <table border="1" cellpadding="5">
-        <thead>
-          <tr>
-            <th>Valor</th>
-            <th>Categoria</th>
-            <th>Descrição</th>
-            <th>Data</th>
-          </tr>
-        </thead>
-        <tbody id="tabelaDespesas"></tbody>
-      </table>
-
-      
+        <table border="1" cellpadding="5">
+          <thead>
+            Saldo: 000,00 <!-- é para o valor da receita mensal pedido no form vir aq descontado do valor da despesa-->
+            <tr>
+              <th>Valor</th>
+              <th>Categoria</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody id="tabelaDespesas"></tbody>
+        </table>
+        <div class="buttons">
+          <button>
+            <a href="index.html">Voltar</a>
+          </button>
+        </div>
+      </div>
     </div>
-    <a href="index.html">Voltar</a>
   </body>
 </html>

@@ -40,20 +40,33 @@
           />
 
           <label for="categoria">Categoria de despesas</label>
-          <input
-            type="text"
-            placeholder="Escolha a categoria da despesa"
-            id="categoria"
-            required
-          />
-          <button id="btnAdicionar" class="btn" type="submit">
-            Adicionar
+          <div class="opcoes-categorias">
+            <select name="categorias" id="categorias">
+              <option value="Hostpital">Hospital</option>
+              <option value="Medicamentos">Medicamentos</option>
+              <option value="Compras do mercado">Compras do mercado</option>
+              <option value="Veículo">Veículo</option>
+              <option value="Alimentação">Alimentação</option>
+              <option value="Educação">Educação</option>
+              <option value="Vestuário">Vestuário</option>
+              <option value="Academia">Academia</option>
+              <option value="Contas da casa">Contas da casa</option>
+              <option value="Viagens">Viagens</option>
+              <option value="Pet">Pet</option>
+              <option value="Outros">Outros</option>
+            </select>
+          </div>
+          <label for="data" class="label-data">Data de despesa</label>
+          <input type="date" id="data" class="input-data" />
+        </div>
+        <div class="buttons">
+          <button id="btnAdicionar" class="btn" type="submit">Adicionar</button>
+
+          <button>
+            <a href="despesas.html">Ver lista de despesas</a>
           </button>
-          <a href="despesas.html">Ver lista de despesas</a>
         </div>
       </form>
-
-      <!----  !-->
     </div>
   </body>
 </html>
