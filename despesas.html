@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Despesas</title>
+    <script src="scripts/main.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="despesas">
+      <div class="tittleDespesas">
+        <h1>Lista de Despesas</h1>
+      </div>
+      <div class="buttons">
+        <button id="btnAdicionar" class="btn" onclick="removerPrimeira()">
+          Remover a primeira despesa
+        </button>
+        <button id="btnAdicionar" class="btn" onclick="removerUltima()">
+          Remover a ultima despesa
+        </button>
+      </div>
+
+      <table border="1" cellpadding="5">
+        <thead>
+          <tr>
+            <th>Valor</th>
+            <th>Categoria</th>
+            <th>Descrição</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaDespesas"></tbody>
+      </table>
+
+      
+    </div>
+    <a href="index.html">Voltar</a>
+  </body>
+</html>

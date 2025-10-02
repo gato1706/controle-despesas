@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Controle de Despesas</title>
     <link rel="stylesheet" href="./styles/index.css" />
-    <script src="./scripts/despesas.js" defer type="module"></script>
+
+    <script src="./scripts/main.js" type="module" defer></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -44,43 +46,14 @@
             id="categoria"
             required
           />
-        </div>
-
-        <div class="buttons">
-          <button id="btnAdicionar" class="btn" onclick="addDespesa()">
+          <button id="btnAdicionar" class="btn" type="submit">
             Adicionar
           </button>
-          <button id="btnAdicionar" class="btn" onclick="removerUltima()">
-            Remover a ultima despesa
-          </button>
-          <button id="btnAdicionar" class="btn" onclick="removerPrimeira()">
-            Remover a primeira despesa
-          </button>
+          <a href="despesas.html">Ver lista de despesas</a>
         </div>
       </form>
 
       <!----  !-->
-      <div class="despesas">
-        <div class="tittleDespesas">
-          <h1>Lista de Despesas</h1>
-        </div>
-        <table id="ListaDespesas" border="1">
-          <thead>
-            <tr>
-              <th class="ordenavel" onclick="ordenarPorCategoria()">
-                Categoria
-              </th>
-              <th class="ordenavel">Receita</th>
-              <th class="ordenavel">Valor Da Despesa</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-          <tr class="total">
-            <td colspan="3"><strong>Total:</strong></td>
-            <td id="totalPreco" class="direita">R$ 0,00</td>
-          </tr>
-        </table>
-      </div>
     </div>
   </body>
 </html>
