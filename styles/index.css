@@ -62,10 +62,19 @@ input {
   font-size: 36px;
 }
 
+
+#categorias{
+  border-radius: 5px;
+  padding: 2px;
+  border: solid 1px #209eb4;
+  width: 14.1rem;
+  text-align: center;
+}
+
 .buttons {
   display: flex;
   flex-direction: row;
-  margin: 15px;
+  margin: 8px;
   gap: 10px;
 }
 button {
@@ -118,6 +127,8 @@ label {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
+
+
 
 .tittleDespesas {
   align-items: flex-start;
@@ -183,4 +194,25 @@ tbody tr:nth-child(even) {
   button {
     width: 90%;
   }
+}
+
+
+.input-data {
+  padding: 10px;
+  border: 1px solid var(--cor-fundo-secundaria);
+  border-radius: 6px;
+  background: #f9f9f9;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input-data:hover {
+  background: #f0f0f0;
+}
+
+.input-data:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
