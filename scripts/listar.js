@@ -1,25 +1,39 @@
 import { getDespesas } from "./storage.js";
 
-export function listarDespesas() {
+export function listarDespesas(categoriaFiltro = "") {
   const tabela = document.getElementById("tabelaDespesas");
-  const saldo = document.getElementById("saldoAtual");
+  const saldoEl = document.getElementById("saldoAtual");
 
-  if (tabela) {
+  if (tabela && saldoEl) {
     let despesas = getDespesas();
-    let total = 0;
+    tabela.innerHTML = ""; // Limpa a tabela antes de preencher
 
-    despesas.forEach((d) => {
+    // Calcula o saldo total (considerando TODAS as despesas)
+    const receitaTotal = parseFloat(despesas[0]?.receita || 0);
+    const despesaTotal = despesas.reduce(
+      (acc, d) => acc + parseFloat(d.valor),
+      0
+    );
+    const saldoFinal = receitaTotal - despesaTotal;
+    saldoEl.textContent = `Saldo Atual: R$ ${saldoFinal.toFixed(2)}`;
+
+    // Filtra as despesas que devem ser mostradas na tabela
+    const despesasParaExibir =
+      categoriaFiltro && categoriaFiltro !== ""
+        ? despesas.filter((d) => d.categoria === categoriaFiltro)
+        : despesas;
+
+    // Cria as linhas da tabela com as despesas filtradas
+    let saldoCorrente = receitaTotal;
+    despesasParaExibir.forEach((d) => {
+      saldoCorrente -= parseFloat(d.valor); // Este saldo é progressivo para os itens exibidos
       let linha = document.createElement("tr");
-      const saldoDescontado = parseFloat(d.receita) - parseFloat(d.valor);
-      const saldoAtual = saldoDescontado;
-
-      saldo.textContent = `Saldo Atual: ${saldoAtual.toFixed(2)}`;
       linha.innerHTML = `
-        <td>R$ ${d.receita}</td>
-        <td>R$ ${d.valor}</td>
+        <td>R$ ${parseFloat(d.receita).toFixed(2)}</td>
+        <td>R$ ${parseFloat(d.valor).toFixed(2)}</td>
         <td>${d.categoria}</td>
         <td>${d.dataFormatada}</td>
-        <td>R$${saldoDescontado.toFixed(2)}</td>
+        <td>R$${saldoCorrente.toFixed(2)}</td>
       `;
 
       tabela.appendChild(linha);
