@@ -34,6 +34,7 @@ export function listarDespesas(categoriaFiltro = "") {
         <td>${d.categoria}</td>
         <td>${d.dataFormatada}</td>
         <td>R$${saldoCorrente.toFixed(2)}</td>
+        <td>${d.descricao || "-"}</td>
       `;
 
       tabela.appendChild(linha);
