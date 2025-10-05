@@ -6,6 +6,13 @@
     <title>Lista de Despesas</title>
     <link rel="stylesheet" href="styles/index.css" />
     <script src="scripts/main.js" type="module" defer></script>
+    <script src="scripts/pdf.js" type="module" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.12.1/html2pdf.bundle.min.js"
+      integrity="sha512-D25Z8/1q2z65ZpJ3NzY6XiPZfwjhbv34OTQHDIZd+KPK+uWCovGt+fMkSzW8ArzCMFUgZt6Cdu7qoXNuy6a2GA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <div class="container">
@@ -13,24 +20,42 @@
         <div class="tittleDespesas">
           <h1>Lista de Despesas</h1>
         </div>
-        
-        <div class="relatorio-mensal">
-          <h2>Relatório Mensal</h2>
-          <div class="relatorio-conteudo">
-            <div>
-              <h4>Total de Receitas</h4>
-              <p id="relatorioReceitas">R$ 0.00</p>
-            </div>
-            <div>
-              <h4>Total de Despesas</h4>
-              <p id="relatorioDespesas">R$ 0.00</p>
-            </div>
-            <div>
-              <h4>Saldo Final</h4>
-              <p id="relatorioSaldo">R$ 0.00</p>
+        <div id="pdf-content">
+          <div class="relatorio-mensal">
+            <h2>Relatório Mensal</h2>
+            <div class="relatorio-conteudo">
+              <div>
+                <h4>Total de Receitas</h4>
+                <p id="relatorioReceitas">R$ 0.00</p>
+              </div>
+              <div>
+                <h4>Total de Despesas</h4>
+                <p id="relatorioDespesas">R$ 0.00</p>
+              </div>
+              <div>
+                <h4>Saldo Final</h4>
+                <p id="relatorioSaldo">R$ 0.00</p>
+              </div>
             </div>
           </div>
+
+          <table border="1" cellpadding="5">
+            <thead>
+              <tr>
+                <th>Receita</th>
+                <th>Despesa</th>
+                <th>Categoria</th>
+
+                <th>Saldo</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody id="tabelaDespesas"></tbody>
+          </table>
         </div>
+
+        <button id="btnExportar">Exportar para PDF</button>
+
         <div class="filtro-container">
           <label for="filtroCategoria">Filtrar por Categoria:</label>
           <select name="categorias" id="filtroCategoria">
@@ -50,20 +75,6 @@
           </select>
           <button id="btnFiltrar" class="btn">Filtrar</button>
         </div>
-        <table border="1" cellpadding="5">
-          <thead>
-            <tr>
-              <th>Receita</th>
-              <th>Despesa</th>
-              <th>Categoria</th>
-
-              <th>Saldo</th>
-              <th>Descrição</th>
-            </tr>
-          </thead>
-          <tbody id="tabelaDespesas"></tbody>
-          
-        </table>
         <div class="buttons">
           <button id="btnAdicionar" class="btn" onclick="removerUltima()">
             Remover a ultima despesa
