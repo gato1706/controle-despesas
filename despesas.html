@@ -21,11 +21,30 @@
             Remover a ultima despesa
           </button>
         </div>
-
+        <div class="saldo-container" style="margin-top: 20px;">
+            <h3 id="saldoAtual">R$ 0.00</h3>
+        </div>
+        <div class="filtro-container" style="margin: 15px 0; display: flex; gap: 10px; align-items: center;">
+          <label for="filtroCategoria">Filtrar por Categoria:</label>
+          <select name="categorias" id="filtroCategoria" style="padding: 5px;">
+            <option value="">Todas</option>
+            <option value="Hostpital">Hospital</option>
+            <option value="Medicamentos">Medicamentos</option>
+            <option value="Compras do mercado">Compras do mercado</option>
+            <option value="Veículo">Veículo</option>
+            <option value="Alimentação">Alimentação</option>
+            <option value="Educação">Educação</option>
+            <option value="Vestuário">Vestuário</option>
+            <option value="Academia">Academia</option>
+            <option value="Contas da casa">Contas da casa</option>
+            <option value="Viagens">Viagens</option>
+            <option value="Pet">Pet</option>
+            <option value="Outros">Outros</option>
+          </select>
+          <button id="btnFiltrar" class="btn">Filtrar</button>
+        </div>
         <table border="1" cellpadding="5">
           <thead>
-            <h3 id="saldoAtual">R$ 000.00</h3>
-            <!-- é para o valor da receita mensal pedido no form vir aq descontado do valor da despesa-->
             <tr>
               <th>Receita</th>
               <th>Despesa</th>
