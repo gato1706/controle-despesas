@@ -1,82 +1,67 @@
-# 💰 Simulador de Orçamento Familiar
+# 💰 Controle de Despesas
 
-Projeto em **HTML, CSS e JavaScript** para simulação de orçamento mensal.  
-O usuário poderá cadastrar receitas e despesas por categoria e gerar relatórios com saldo, alertas de limite e gráfico de distribuição.
-
----
-
-## 🚀 Objetivo
-O sistema tem como finalidade auxiliar no **controle financeiro familiar**, permitindo:
-- Adicionar receitas e despesas.
-- Calcular saldo mensal.
-- Filtrar despesas por categoria.
-- Exibir relatório consolidado.
-- Emitir alertas de limite.
-- Visualizar gráfico de distribuição dos gastos.
-
+Um projeto simples e funcional para controle de despesas mensais, desenvolvido com **HTML, CSS e JavaScript puro**. A aplicação permite que o usuário cadastre sua receita mensal e suas despesas, visualizando um relatório consolidado e uma lista detalhada de gastos.
 
 ---
 
-## 📂 Estrutura sugerida de diretórios
+## 🚀 Funcionalidades Implementadas
 
-```bash
-/simulador-orcamento
-│── index.html              # Página principal do projeto
-│── style.css               # Estilos globais
+O sistema oferece uma experiência intuitiva para o gerenciamento financeiro, com as seguintes funcionalidades:
+
+- ✅ **Cadastro de Despesas**: Formulário para adicionar despesas com valor, categoria, data e uma descrição opcional.
+- ✅ **Armazenamento Local**: Os dados são salvos no `localStorage` do navegador, garantindo que as informações não sejam perdidas ao fechar a página.
+- ✅ **Relatório Mensal**: Um card de relatório exibe o total de receitas, o total de despesas e o saldo final do mês.
+- ✅ **Listagem Detalhada**: Uma tabela exibe todas as despesas cadastradas, incluindo um **saldo progressivo** que mostra o valor restante após cada transação.
+- ✅ **Filtro por Categoria**: É possível filtrar a lista de despesas para visualizar apenas os gastos de uma categoria específica.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+*   **HTML5**: Para a estruturação das páginas de cadastro e listagem.
+*   **CSS3**: Para a estilização completa da aplicação, incluindo o layout responsivo.
+*   **JavaScript (ES6+)**: Para toda a lógica de manipulação de dados, cálculos, interatividade e armazenamento local.
+
+---
+
+## 📂 Estrutura do Projeto
+
+O código está organizado da seguinte forma:
+
+```
+/controle-despesas
 │
-├── /js                     # Pasta para scripts JavaScript organizados
-│   ├── despesas.js         # Funções relacionadas a despesas
-│   ├── receitas.js         # Funções relacionadas a receitas
-│   ├── relatorio.js        # Cálculo e exibição do relatório mensal
-│   └── grafico.js          # Configuração e atualização do gráfico
+├── index.html              # Página de cadastro de despesas.
+├── despesas.html           # Página de listagem e relatório.
 │
-├── /assets                 # Recursos estáticos
-│   ├── img/                # Ícones e imagens
-└── 
+├── /styles
+│   └── index.css           # Folha de estilos principal.
+│
+└── /scripts
+    ├── main.js             # Ponto de entrada, gerencia os eventos.
+    ├── adicionarDespesa.js # Lógica para adicionar e salvar despesas.
+    ├── listar.js           # Lógica para listar, calcular e filtrar despesas.
+    └── storage.js          # Funções para interagir com o localStorage.
 ```
 
 ---
 
-## ✅ Funcionalidades principais
-- [ ] **Layout inicial em HTML** com formulários para receitas e despesas.  
-- [ ] **Estilização com CSS** (cores para receitas, despesas e saldo).  
-- [ ] **Adicionar despesas** (categoria + valor).  
-- [ ] **Adicionar receitas** (valor mensal).  
-- [ ] **Calcular saldo** (receitas - despesas).  
-- [ ] **Filtrar despesas por categoria** e mostrar subtotal.  
-- [ ] **Gerar relatório mensal** (receitas totais, despesas totais, saldo final).  
-- [ ] **Emitir alerta de limite** se despesas ≥ receitas.  
-- [ ] **Gerar gráfico de distribuição** das despesas por categoria (pizza ou barras).  
-- [ ] **Refatorar em módulos JS** (`despesas.js`, `receitas.js`, etc.).  
+## 🚀 Como Executar
+
+Como este é um projeto front-end puro, não há necessidade de um servidor ou de instalação de dependências.
+
+1.  **Clone o repositório** para a sua máquina local:
+    ```bash
+    git clone <URL_DO_REPOSITORIO>
+    ```
+2.  **Abra o arquivo `index.html`** no seu navegador de preferência para começar a adicionar despesas.
+3.  Clique no botão **"Ver lista de despesas"** para navegar até a página de relatórios.
 
 ---
 
-## 🧩 Tarefas detalhadas
+## 🔮 Próximos Passos (Sugestões)
 
-### 📌 Estrutura e Interface
-- [ ] Criar formulário com inputs: **receita mensal, categoria de despesa, valor**.  
-- [ ] Criar botões **Adicionar Receita** e **Adicionar Despesa**.  
-- [ ] Criar área para **relatório mensal** e **gráfico**.  
-- [ ] Tornar layout **responsivo** usando Flexbox ou Grid.  
-
-### 📌 Funcionalidades
-- [ ] Função `adicionarDespesa()` → capturar valores, validar, salvar no array e atualizar lista.  
-- [ ] Função `adicionarReceita()` → capturar valor, validar e salvar no array.  
-- [ ] Função `calcularSaldo()` → somar receitas - despesas e exibir saldo.  
-
-### 📌 Relatórios e Filtros
-- [ ] Criar filtro por categoria → exibir apenas despesas daquela categoria.  
-- [ ] Relatório consolidado → receitas totais, despesas totais e saldo.  
-- [ ] Alerta se despesas > receitas → destacar saldo em vermelho.  
- 
-
-### 📌 Refatoração
-- [ ] Separar lógicas em módulos:  
-  - `despesas.js` → funções de despesas.  
-  - `receitas.js` → funções de receitas.  
-  - `relatorio.js` → cálculo e exibição de relatório.  
-  - `grafico.js` → geração e atualização do gráfico.  
-
-
-
-
+- **Edição e Exclusão**: Implementar botões para editar ou remover uma despesa individualmente.
+- **Gráficos**: Adicionar um gráfico (pizza ou barras) para visualizar a distribuição de gastos por categoria.
+- **Alertas Visuais**: Mudar a cor do saldo final no relatório para vermelho quando ele for negativo.
+- **Ordenação**: Permitir que o usuário ordene a tabela por data ou valor.
