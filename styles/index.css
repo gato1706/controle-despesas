@@ -62,8 +62,7 @@ input {
   font-size: 36px;
 }
 
-
-#categorias{
+#categorias {
   border-radius: 5px;
   padding: 2px;
   border: solid 1px #209eb4;
@@ -94,26 +93,6 @@ label {
     Despesas
    ============================= */
 
-.saldo-positivo {
-  background: #d4efdf;
-  color: green;
-}
-
-.saldo-neutro {
-  background: #dad8ac;
-  color: yellow;
-}
-
-.saldo-negativo {
-  background: #e48d8d;
-  color: rgb(255, 0, 0);
-}
-
-.resultado-erro {
-  background: #d5b487;
-  color: orange;
-}
-
 .despesas {
   font-family: "roboto", sans-serif;
   display: flex;
@@ -127,8 +106,6 @@ label {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
-
-
 
 .tittleDespesas {
   align-items: flex-start;
@@ -170,16 +147,7 @@ td {
 tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-.ordenavel {
-  cursor: pointer;
-}
-.direita {
-  text-align: right;
-}
-.total {
-  background: #4f9fee;
-  color: white;
-}
+
 /* =============================
    Responsividade
    ============================= */
@@ -195,7 +163,6 @@ tbody tr:nth-child(even) {
     width: 90%;
   }
 }
-
 
 .input-data {
   padding: 10px;
@@ -215,4 +182,55 @@ tbody tr:nth-child(even) {
 .input-data:focus {
   border-color: #007bff;
   box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* =============================
+   Relatório e Filtros
+   ============================= */
+.relatorio-mensal {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 100%;
+  max-width: 800px;
+}
+
+.relatorio-mensal h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #1976d2;
+}
+
+.relatorio-mensal .relatorio-conteudo {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+#relatorioReceitas {
+  font-size: 1.2em;
+  color: green;
+}
+
+#relatorioDespesas {
+  font-size: 1.2em;
+  color: red;
+}
+
+#relatorioSaldo {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.filtro-container {
+  margin: 15px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#filtroCategoria {
+  padding: 5px;
 }

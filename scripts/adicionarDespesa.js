@@ -10,15 +10,13 @@ export function adicionarDespesa() {
       const valor = parseFloat(document.getElementById("valorDespesa").value);
       const categoria = document.getElementById("categorias").value;
       const receita = document.getElementById("receita").value;
-      const dataInput = document.getElementById("data").value;
+     
       const descricao = document.getElementById("descricao").value;
 
-      const [ano, mes, dia] = dataInput.split("-");
-      const dataFormatada = `${dia}/${mes}/${ano}`;
 
       console.log(dataFormatada); // "02/10/2025"
 
-      const novaDespesa = { valor, categoria, receita, dataFormatada, descricao };
+      const novaDespesa = { valor, categoria, receita, descricao };
 
       let despesas = getDespesas();
       despesas.push(novaDespesa);

@@ -1,10 +1,15 @@
 import { getDespesas } from "./storage.js";
 
+
 export function listarDespesas(categoriaFiltro = "") {
   const tabela = document.getElementById("tabelaDespesas");
-  const saldoEl = document.getElementById("saldoAtual");
+  // Elementos do novo relatório mensal
+  const relatorioReceitasEl = document.getElementById("relatorioReceitas");
+  const relatorioDespesasEl = document.getElementById("relatorioDespesas");
+  const relatorioSaldoEl = document.getElementById("relatorioSaldo");
 
-  if (tabela && saldoEl) {
+  // Verifica se estamos na página de despesas (checando a existência da tabela e do relatório)
+  if (tabela && relatorioReceitasEl) {
     let despesas = getDespesas();
     tabela.innerHTML = ""; // Limpa a tabela antes de preencher
 
@@ -15,7 +20,11 @@ export function listarDespesas(categoriaFiltro = "") {
       0
     );
     const saldoFinal = receitaTotal - despesaTotal;
-    saldoEl.textContent = `Saldo Atual: R$ ${saldoFinal.toFixed(2)}`;
+
+    // Preenche os dados do relatório mensal
+    relatorioReceitasEl.textContent = `R$ ${receitaTotal.toFixed(2)}`;
+    relatorioDespesasEl.textContent = `R$ ${despesaTotal.toFixed(2)}`;
+    relatorioSaldoEl.textContent = `R$ ${saldoFinal.toFixed(2)}`;
 
     // Filtra as despesas que devem ser mostradas na tabela
     const despesasParaExibir =
@@ -25,19 +34,23 @@ export function listarDespesas(categoriaFiltro = "") {
 
     // Cria as linhas da tabela com as despesas filtradas
     let saldoCorrente = receitaTotal;
-    despesasParaExibir.forEach((d) => {
-      saldoCorrente -= parseFloat(d.valor); // Este saldo é progressivo para os itens exibidos
-      let linha = document.createElement("tr");
-      linha.innerHTML = `
-        <td>R$ ${parseFloat(d.receita).toFixed(2)}</td>
-        <td>R$ ${parseFloat(d.valor).toFixed(2)}</td>
-        <td>${d.categoria}</td>
-        <td>${d.dataFormatada}</td>
-        <td>R$${saldoCorrente.toFixed(2)}</td>
-        <td>${d.descricao || "-"}</td>
-      `;
+    // Itera sobre TODAS as despesas para calcular o saldo corrente corretamente
+    despesas.forEach((d) => {
+      const valorDespesa = parseFloat(d.valor);
+      saldoCorrente -= valorDespesa; // O saldo corrente é sempre atualizado
 
-      tabela.appendChild(linha);
+      // Adiciona a linha na tabela APENAS se ela pertencer ao conjunto filtrado
+      if (despesasParaExibir.includes(d)) {
+        let linha = document.createElement("tr");
+        linha.innerHTML = `
+          <td>R$ ${parseFloat(d.receita).toFixed(2)}</td>
+          <td>R$ ${valorDespesa.toFixed(2)}</td>
+          <td>${d.categoria}</td>
+          <td>R$ ${saldoCorrente.toFixed(2)}</td>
+          <td>${d.descricao || "-"}</td>
+        `;
+        tabela.appendChild(linha);
+      }
     });
   }
 }
