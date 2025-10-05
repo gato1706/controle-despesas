@@ -1,4 +1,3 @@
-// Funções de salvar e recuperar despesas
 export function getDespesas() {
   return JSON.parse(localStorage.getItem("despesas")) || [];
 }
