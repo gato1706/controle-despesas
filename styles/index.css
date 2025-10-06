@@ -81,6 +81,7 @@ button {
   border-radius: 5px;
   border: solid 1px #209eb4;
   font-size: 13px;
+  cursor: pointer;
 }
 a {
   color: inherit;
