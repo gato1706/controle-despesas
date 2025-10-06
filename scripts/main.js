@@ -1,6 +1,27 @@
 import { adicionarDespesa, removerUltimaDespesa } from "./adicionarDespesa.js";
 import { listarDespesas } from "./listar.js";
-
+/**
+ * @author Gabriel Monteiro <gabrielmontsilva16@gmail.com>
+ * @author Vitor Cruz <provitor39@gmail.com>
+ * @author Thiago Gato <thiago.gato17g@gmail.com>
+ * @version 1.0.0
+ * @since 1.0.0 (05/10/2025)
+ * 
+ * Inicializa o comportamento principal da aplicação de controle de despesas.
+ *
+ * @file main.js
+ * @description
+ * Este módulo coordena a lógica da aplicação:
+ * - Inicializa o cadastro de novas despesas (index.html)
+ * - Exibe a listagem de despesas (despesas.html)
+ * - Gerencia a filtragem de despesas por categoria
+ *
+ * O código é executado assim que o conteúdo da página é totalmente carregado (evento `DOMContentLoaded`).
+ *
+ * @see adicionarDespesa
+ * @see listarDespesas
+ */
+ 
 
 document.addEventListener("DOMContentLoaded", () => {
   // Lógica da página de cadastro (index.html)

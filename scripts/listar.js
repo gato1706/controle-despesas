@@ -1,4 +1,39 @@
 import { getDespesas } from "./storage.js";
+/**
+ * @author Gabriel Monteiro <gabrielmontsilva16@gmail.com>
+ * @author Vitor Cruz <provitor39@gmail.com>
+ * @author Thiago Gato <thiago.gato17g@gmail.com>
+ * @version 1.0.0
+ * @since 1.0.0 (05/10/2025)
+ * @file listar.js
+ * @description
+ * Módulo responsável por exibir e atualizar a lista de despesas na interface.
+ * Também calcula o relatório mensal (total de receitas, total de despesas e saldo final)
+ * e permite a filtragem das despesas por categoria.
+ *
+ * Esta função é chamada automaticamente pelo `main.js` quando a página é carregada.
+ *
+ * @requires getDespesas
+ */
+/**
+ * Lista todas as despesas registradas no localStorage e atualiza o relatório mensal.
+ *
+ * @function listarDespesas
+ * @param {string} [categoriaFiltro=""] - Categoria opcional para filtrar as despesas exibidas.
+ *
+ * @description
+ * - Obtém as despesas armazenadas via {@link getDespesas}.
+ * - Atualiza os elementos do relatório mensal com:
+ *   - Total de receitas
+ *   - Total de despesas
+ *   - Saldo final (receita - despesas)
+ * - Preenche a tabela de despesas na tela, filtrando pela categoria se informado.
+ *
+ * @returns {void}
+ *
+ * @see getDespesas
+ * @see main.js
+ */
 
 
 export function listarDespesas(categoriaFiltro = "") {
