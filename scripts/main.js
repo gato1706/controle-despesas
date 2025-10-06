@@ -1,5 +1,6 @@
-import { adicionarDespesa } from "./adicionarDespesa.js";
+import { adicionarDespesa, removerUltimaDespesa } from "./adicionarDespesa.js";
 import { listarDespesas } from "./listar.js";
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // Lógica da página de cadastro (index.html)
@@ -15,4 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
       listarDespesas(categoria);
     });
   }
-});
+      const btnRemoverUltima = document.getElementById("btnRemoverUltima");
+  if (btnRemoverUltima) {
+    btnRemoverUltima.addEventListener("click", () => {
+      removerUltimaDespesa()
+      listarDespesas()
+    });
+  }})

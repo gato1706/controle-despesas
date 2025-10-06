@@ -14,16 +14,27 @@ export function adicionarDespesa() {
       const descricao = document.getElementById("descricao").value;
 
 
-      console.log(dataFormatada); // "02/10/2025"
 
-      const novaDespesa = { valor, categoria, receita, descricao };
+            const novaDespesa = { valor, categoria, receita, descricao };
 
-      let despesas = getDespesas();
-      despesas.push(novaDespesa);
-      salvarDespesas(despesas);
+            let despesas = getDespesas();
+            despesas.push(novaDespesa);
+            salvarDespesas(despesas);
 
-      alert("Despesa adicionada!");
-      form.reset();
+            alert("Despesa adicionada!");
+            form.reset();
     });
-  }
+    }
+}
+
+export function removerUltimaDespesa() {
+    let despesas = getDespesas();
+
+    if (despesas.length > 0) {
+        despesas.pop();
+        salvarDespesas(despesas);
+        alert("Última despesa removida!");
+    } else {
+        alert("Não há despesas para remover.");
+    }
 }
