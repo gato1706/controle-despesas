@@ -44,26 +44,7 @@ O código está organizado da seguinte forma:
     ├── adicionarDespesa.js # Lógica para adicionar e salvar despesas.
     ├── listar.js           # Lógica para listar, calcular e filtrar despesas.
     └── storage.js          # Funções para interagir com o localStorage.
+    └── pdf.js          # Função para exportar o relatório em PDF.
+    
 ```
 
----
-
-## 🚀 Como Executar
-
-Como este é um projeto front-end puro, não há necessidade de um servidor ou de instalação de dependências.
-
-1.  **Clone o repositório** para a sua máquina local:
-    ```bash
-    git clone <URL_DO_REPOSITORIO>
-    ```
-2.  **Abra o arquivo `index.html`** no seu navegador de preferência para começar a adicionar despesas.
-3.  Clique no botão **"Ver lista de despesas"** para navegar até a página de relatórios.
-
----
-
-## 🔮 Próximos Passos (Sugestões)
-
-- **Edição e Exclusão**: Implementar botões para editar ou remover uma despesa individualmente.
-- **Gráficos**: Adicionar um gráfico (pizza ou barras) para visualizar a distribuição de gastos por categoria.
-- **Alertas Visuais**: Mudar a cor do saldo final no relatório para vermelho quando ele for negativo.
-- **Ordenação**: Permitir que o usuário ordene a tabela por data ou valor.
