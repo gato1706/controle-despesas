@@ -2,6 +2,8 @@
 
 Um projeto simples e funcional para controle de despesas mensais, desenvolvido com **HTML, CSS e JavaScript puro**. A aplicação permite que o usuário cadastre sua receita mensal e suas despesas, visualizando um relatório consolidado e uma lista detalhada de gastos.
 
+O projeto estará disponivel no GitPages: https://gato1706.github.io/controle-despesas/despesas.html
+
 ---
 
 ## 🚀 Funcionalidades Implementadas
